@@ -37,7 +37,6 @@
   - Claude.ai
   - ChatGpt
   - DeepSeek
-    _Bolt.new é muito ruim, não usem 😊_
 
 - **Bibliotecas**:
   - [Chart.js](https://www.chartjs.org/)
