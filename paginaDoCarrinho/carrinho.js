@@ -1,13 +1,11 @@
-// Seleciona elementos da página
 const cartTableBody = document.querySelector("#cartTable tbody");
 const cartTotal = document.getElementById("cartTotal");
 
 // Carrega os itens do carrinho salvos no localStorage (se existirem)
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-// Função para renderizar os itens do carrinho
 function renderCart() {
-  cartTableBody.innerHTML = ""; // Limpa a tabela
+  cartTableBody.innerHTML = "";
   let total = 0;
 
   cart.forEach((item, index) => {
@@ -43,10 +41,8 @@ function removeFromCart(index) {
 //   renderCart();
 // });
 
-// Função para voltar ao Dashboard
 function goToDashboard() {
-  window.location.href = "../index.html"; // Ajuste o caminho conforme necessário
+  window.location.href = "../index.html";
 }
 
-// Renderiza o carrinho ao carregar a página
 renderCart();

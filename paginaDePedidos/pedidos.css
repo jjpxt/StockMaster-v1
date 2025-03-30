@@ -1,6 +1,6 @@
-/* Ajustes básicos - GLOBAL */
+
 * {
-  box-sizing: border-box; /* Evita cálculos errados de largura */
+  box-sizing: border-box; 
 }
 
 body {
@@ -10,18 +10,17 @@ body {
   overflow-x: hidden;
 }
 
-/* CONTAINER PRINCIPAL - NOVO */
+
 .main-container {
-  max-width: 1440px; /* Limita largura máxima em telas gigantes */
+  max-width: 1440px; 
   margin: 0 auto;
-  padding: 20px 40px; /* Previne cortes nas laterais */
+  padding: 20px 40px; 
 }
 
-/* CATÁLOGO DE PRODUTOS - AJUSTE CRÍTICO */
 .product-catalog {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grid responsivo */
-  gap: 30px; /* Espaçamento entre itens */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+  gap: 30px; 
   padding: 20px 0;
 }
 
@@ -35,26 +34,26 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 250px; /* Altura mínima ao invés de fixa */
-  width: 100%; /* Ocupa 100% do espaço do grid */
-  margin: 0; /* Remove margem anterior */
+  min-height: 250px; 
+  width: 100%;
+  margin: 0; 
 }
 
-/* BOTÕES "VOLTAR" E "FINALIZAR" - AJUSTE ESTRUTURAL */
+
 .botoes-container {
   display: flex;
   gap: 30px;
   justify-content: center;
   margin: 40px 0;
-  flex-wrap: wrap; /* Quebra linha em telas pequenas */
+  flex-wrap: wrap; 
 }
 
 #button, #buttonPedido {
   height: 50px;
-  min-width: 220px; /* Largura consistente */
+  min-width: 220px; 
   padding: 15px 30px;
   margin: 10px;
-  flex-grow: 1; /* Preenche espaço igualmente */
+  flex-grow: 1; 
 }
 
 #buttonJs:hover{
@@ -62,10 +61,10 @@ body {
   color: #fff;
 }
 
-/* RESPONSIVIDADE */
+
 @media (max-width: 768px) {
   .main-container {
-    padding: 20px 15px; /* Reduz padding em mobile */
+    padding: 20px 15px; 
   }
   
   .catalog-item {
@@ -79,8 +78,8 @@ body {
 
 @media (min-width: 1200px) {
   .botoes-container {
-    justify-content: space-between; /* Separa botões em extremidades */
+    justify-content: space-between; 
     max-width: 800px;
-    margin: 40px auto; /* Centraliza */
+    margin: 40px auto; 
   }
 }

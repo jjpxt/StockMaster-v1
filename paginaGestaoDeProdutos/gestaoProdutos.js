@@ -11,18 +11,12 @@ function saveToLocalStorage() {
 }
 
 function goToHomePage() {
-  window.location.href = "../index.html"; // Altere o caminho para o arquivo correto da página inicial
+  window.location.href = "../index.html";
 }
 
-// Função para excluir um produto
 function deleteProduct(index) {
-  // Remove o produto do array `products`
   products.splice(index, 1);
-
-  // Atualiza o localStorage com o array atualizado
   saveToLocalStorage();
-
-  // Atualiza a lista de produtos renderizada na interface
   renderProducts();
 }
 
@@ -54,7 +48,6 @@ function renderProducts() {
     productTableBody.appendChild(row);
   });
 
-  // Verifica se stockTableBody existe antes de chamar renderStock
   if (stockTableBody) {
     renderStock();
   }
@@ -66,7 +59,6 @@ function truncateText(text, maxLength) {
   return text.length > maxLength ? text.substring(0, maxLength) + "..." : text;
 }
 
-// Função para renderizar os produtos no estoque
 function renderStock() {
   stockTableBody.innerHTML = "";
   products.forEach((product, index) => {
@@ -99,7 +91,6 @@ function generateRandomDate() {
   return expiryDate.toISOString().split("T")[0];
 }
 
-// Função para adicionar um novo produto
 function addNewProductHandler(event) {
   event.preventDefault();
 
@@ -111,31 +102,26 @@ function addNewProductHandler(event) {
     details: document.getElementById("productDetails").value,
   };
 
-  products.push(newProduct); // Adiciona ao array
-  saveToLocalStorage(); // Salva no localStorage
-  renderProducts(); // Atualiza a lista
-  productForm.reset(); // Limpa o formulário
+  products.push(newProduct);
+  saveToLocalStorage();
+  renderProducts();
+  productForm.reset();
 }
 
-// Função para editar um produto
 function editProduct(index) {
   const product = products[index];
 
-  // Preenche o formulário com os dados do produto para edição
   document.getElementById("productName").value = product.name;
   document.getElementById("productCategory").value = product.category;
   document.getElementById("productBrand").value = product.brand;
   document.getElementById("productPrice").value = product.price;
   document.getElementById("productDetails").value = product.details;
 
-  // Remove o evento original
   productForm.removeEventListener("submit", addNewProductHandler);
 
-  // Referência para a função temporária de salvar alterações
   function saveChangesHandler(event) {
     event.preventDefault();
 
-    // Atualiza o produto no array
     products[index] = {
       name: document.getElementById("productName").value,
       category: document.getElementById("productCategory").value,
@@ -144,20 +130,17 @@ function editProduct(index) {
       details: document.getElementById("productDetails").value,
     };
 
-    saveToLocalStorage(); // Salva no localStorage
-    renderProducts(); // Atualiza a lista
+    saveToLocalStorage();
+    renderProducts();
 
-    // Restaura o formulário para o estado original
     productForm.removeEventListener("submit", saveChangesHandler);
     productForm.addEventListener("submit", addNewProductHandler);
     productForm.reset();
   }
 
-  // Adiciona o evento temporário
   productForm.addEventListener("submit", saveChangesHandler);
 }
 
-// Ajusta o layout da tabela quando a página carrega e quando redimensiona
 window.addEventListener("load", adjustTableForMobile);
 window.addEventListener("resize", adjustTableForMobile);
 
@@ -172,8 +155,6 @@ function adjustTableForMobile() {
   }
 }
 
-// Define o evento inicial para cadastro - APENAS UMA VEZ
 productForm.addEventListener("submit", addNewProductHandler);
 
-// Renderiza os produtos e estoque ao carregar a página
 renderProducts();

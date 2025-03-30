@@ -1,7 +1,7 @@
-/* Reset básico */
+
 body {
   background-color: #f4f4f9;
-  overflow-x: hidden; /* Impede rolagem horizontal */
+  overflow-x: hidden; 
   width: 100%;
   max-width: 100%;
 }
@@ -26,7 +26,6 @@ body {
   color: #18357e !important;
 }
 
-/* Personalização adicional para a tabela */
 .table-responsive {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -68,7 +67,6 @@ body {
   color: white;
 }
 
-/* Ajustes responsivos */
 @media (max-width: 768px) {
   .table {
     font-size: 0.8rem;
@@ -84,7 +82,6 @@ body {
     font-size: 0.7rem;
   }
   
-  /* Ajustando larguras de colunas específicas */
   .table th:nth-child(1), .table td:nth-child(1) { width: 20%; } /* Nome */
   .table th:nth-child(2), .table td:nth-child(2) { width: 15%; } /* Categoria */
   .table th:nth-child(3), .table td:nth-child(3) { width: 15%; } /* Marca */
@@ -93,14 +90,12 @@ body {
   .table th:nth-child(6), .table td:nth-child(6) { width: 20%; } /* Ações */
 }
 
-/* Estilos adicionais para telas muito pequenas */
 @media (max-width: 576px) {
   .product-list {
     width: 100%;
     overflow-x: hidden;
   }
   
-  /* Tabela se transforma em block nativo em telas muito pequenas */
   .table-responsive {
     display: block;
     width: 100%;

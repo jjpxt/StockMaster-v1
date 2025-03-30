@@ -1,7 +1,6 @@
 // Produtos disponíveis no catálogo
 const products = JSON.parse(localStorage.getItem("products")) || [];
 
-// Elementos da página
 const productList = document.getElementById("productList");
 const cartTableBody = document.querySelector("#cartTable tbody");
 const cartTotal = document.getElementById("cartTotal");
@@ -14,9 +13,8 @@ function saveCartToLocalStorage() {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-// Renderizar o catálogo de produtos
 function renderCatalog() {
-  productList.innerHTML = ""; // Limpa o catálogo
+  productList.innerHTML = "";
 
   products.forEach((product, index) => {
     const item = document.createElement("div");
@@ -31,7 +29,6 @@ function renderCatalog() {
   });
 }
 
-// Adicionar um produto ao carrinho
 function addToCart(index) {
   const product = products[index];
   const existingItem = cart.find((item) => item.name === product.name);
@@ -54,7 +51,7 @@ function addToCart(index) {
 
 // Renderizar o carrinho
 function renderCart() {
-  cartTableBody.innerHTML = ""; // Limpa a tabela
+  cartTableBody.innerHTML = "";
   let total = 0;
 
   cart.forEach((item, index) => {
@@ -72,25 +69,23 @@ function renderCart() {
     total += item.total;
   });
 
-  cartTotal.textContent = total.toFixed(2); // Atualiza o total geral
+  cartTotal.textContent = total.toFixed(2);
 }
 
 // Remover do carrinho
 function removeFromCart(index) {
-  cart.splice(index, 1); // Remove o item
+  cart.splice(index, 1);
   saveCartToLocalStorage(); // Atualiza o localStorage
   renderCart();
 }
 
-// Redirecionar para a página do carrinho
 function goToCartPage() {
-  window.location.href = "../paginaDoCarrinho/carrinho.html"; // Ajuste o caminho conforme necessário
+  window.location.href = "../paginaDoCarrinho/carrinho.html";
 }
 
-// Inicializar a página
 renderCatalog();
 renderCart();
 
 function goToDashboard() {
-  window.location.href = "../index.html"; // Ajuste o caminho conforme necessário
+  window.location.href = "../index.html";
 }

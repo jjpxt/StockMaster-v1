@@ -1,12 +1,10 @@
-// Seleciona o corpo da tabela de estoque
 const stockTableBody = document.querySelector("#stockTable tbody");
 
 // Carrega produtos do localStorage
 let stockItems = JSON.parse(localStorage.getItem("products")) || [];
 
-// Função para renderizar os itens do estoque
 function renderStock() {
-  stockTableBody.innerHTML = ""; // Limpa a tabela
+  stockTableBody.innerHTML = "";
 
   stockItems.forEach((item, index) => {
     const row = document.createElement("tr");
@@ -25,7 +23,7 @@ function renderStock() {
   localStorage.setItem("products", JSON.stringify(stockItems));
 }
 
-// Gerar uma data de validade aleatória (para demonstração)
+// Gerar uma data de validade aleatória
 function generateRandomDate() {
   const currentDate = new Date();
   const randomDays = Math.floor(Math.random() * 180) + 30; // Entre 30 e 180 dias
@@ -35,10 +33,8 @@ function generateRandomDate() {
   return expiryDate.toISOString().split("T")[0];
 }
 
-// Renderiza o estoque ao carregar a página
 renderStock();
 
-// Função para voltar ao dashboard
 function goToDashboard() {
-  window.location.href = "../index.html"; // Ajuste o caminho conforme necessário
+  window.location.href = "../index.html";
 }
