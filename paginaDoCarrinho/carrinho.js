@@ -45,7 +45,7 @@ function removeFromCart(index) {
 
 // Função para voltar ao Dashboard
 function goToDashboard() {
-  window.location.href = "../dashboard/dashboard.html"; // Ajuste o caminho conforme necessário
+  window.location.href = "../index.html"; // Ajuste o caminho conforme necessário
 }
 
 // Renderiza o carrinho ao carregar a página

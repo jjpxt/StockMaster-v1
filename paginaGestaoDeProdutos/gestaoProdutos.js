@@ -11,7 +11,7 @@ function saveToLocalStorage() {
 }
 
 function goToHomePage() {
-  window.location.href = "../dashboard/dashboard.html"; // Altere o caminho para o arquivo correto da página inicial
+  window.location.href = "../index.html"; // Altere o caminho para o arquivo correto da página inicial
 }
 
 // Função para excluir um produto

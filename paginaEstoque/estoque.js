@@ -40,5 +40,5 @@ renderStock();
 
 // Função para voltar ao dashboard
 function goToDashboard() {
-  window.location.href = "../dashboard/dashboard.html"; // Ajuste o caminho conforme necessário
+  window.location.href = "../index.html"; // Ajuste o caminho conforme necessário
 }
