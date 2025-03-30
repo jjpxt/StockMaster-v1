@@ -1,0 +1,63 @@
+/* Redefinições */
+body {
+  background-color: #f4f4f9;
+}
+
+.sidebar {
+  width: 100%;
+  max-width: 250px;
+  background-color: #333;
+  color: white;
+  height: 100vh;
+}
+
+#cartButton{
+  background-color: rgba(128, 0, 128, 0.78);
+}
+
+.sidebar .menu li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.sidebar .menu li a:hover,
+.sidebar .menu li a.active {
+  background-color: #18357e;
+}
+
+.topbar {
+  background-color: #18357e;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.card {
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.bg-orange {
+  background-color: rgba(239, 125, 11, 0.915) !important;
+}
+
+@media (max-width: 576px) {
+  .sidebar {
+    height: auto;
+    max-width: 100%;
+  }
+
+  .dashboard-container {
+    flex-direction: column;
+  }
+
+  .topbar-content {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

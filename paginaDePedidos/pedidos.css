@@ -1,0 +1,86 @@
+/* Ajustes básicos - GLOBAL */
+* {
+  box-sizing: border-box; /* Evita cálculos errados de largura */
+}
+
+body {
+  background-color: #f4f4f9;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* CONTAINER PRINCIPAL - NOVO */
+.main-container {
+  max-width: 1440px; /* Limita largura máxima em telas gigantes */
+  margin: 0 auto;
+  padding: 20px 40px; /* Previne cortes nas laterais */
+}
+
+/* CATÁLOGO DE PRODUTOS - AJUSTE CRÍTICO */
+.product-catalog {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grid responsivo */
+  gap: 30px; /* Espaçamento entre itens */
+  padding: 20px 0;
+}
+
+.catalog-item {
+  border: 2px solid #18357e;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 250px; /* Altura mínima ao invés de fixa */
+  width: 100%; /* Ocupa 100% do espaço do grid */
+  margin: 0; /* Remove margem anterior */
+}
+
+/* BOTÕES "VOLTAR" E "FINALIZAR" - AJUSTE ESTRUTURAL */
+.botoes-container {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin: 40px 0;
+  flex-wrap: wrap; /* Quebra linha em telas pequenas */
+}
+
+#button, #buttonPedido {
+  height: 50px;
+  min-width: 220px; /* Largura consistente */
+  padding: 15px 30px;
+  margin: 10px;
+  flex-grow: 1; /* Preenche espaço igualmente */
+}
+
+#buttonJs:hover{
+  background-color: #134fe6da;
+  color: #fff;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .main-container {
+    padding: 20px 15px; /* Reduz padding em mobile */
+  }
+  
+  .catalog-item {
+    min-height: auto;
+  }
+  
+  .botoes-container {
+    gap: 15px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .botoes-container {
+    justify-content: space-between; /* Separa botões em extremidades */
+    max-width: 800px;
+    margin: 40px auto; /* Centraliza */
+  }
+}

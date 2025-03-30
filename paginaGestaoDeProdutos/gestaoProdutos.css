@@ -1,0 +1,110 @@
+/* Reset básico */
+body {
+  background-color: #f4f4f9;
+  overflow-x: hidden; /* Impede rolagem horizontal */
+  width: 100%;
+  max-width: 100%;
+}
+
+.container-fluid {
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.return-button button {
+  background-color: #18357e;
+  color: white;
+}
+
+.return-button button:hover {
+  background-color: #45a049;
+}
+
+.text-primary {
+  color: #18357e !important;
+}
+
+/* Personalização adicional para a tabela */
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  table-layout: fixed;
+}
+
+.table th, .table td {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.table th {
+  background-color: #18357e;
+  color: white;
+}
+
+.table td button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 2px;
+}
+
+.table td button.edit {
+  background-color: #2196F3;
+  color: white;
+}
+
+.table td button.delete {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .table {
+    font-size: 0.8rem;
+  }
+  
+  .table td, .table th {
+    padding: 0.4rem;
+    font-size: 0.8rem;
+  }
+  
+  .table td button {
+    padding: 2px 5px;
+    font-size: 0.7rem;
+  }
+  
+  /* Ajustando larguras de colunas específicas */
+  .table th:nth-child(1), .table td:nth-child(1) { width: 20%; } /* Nome */
+  .table th:nth-child(2), .table td:nth-child(2) { width: 15%; } /* Categoria */
+  .table th:nth-child(3), .table td:nth-child(3) { width: 15%; } /* Marca */
+  .table th:nth-child(4), .table td:nth-child(4) { width: 12%; } /* Preço */
+  .table th:nth-child(5), .table td:nth-child(5) { width: 18%; } /* Detalhes */
+  .table th:nth-child(6), .table td:nth-child(6) { width: 20%; } /* Ações */
+}
+
+/* Estilos adicionais para telas muito pequenas */
+@media (max-width: 576px) {
+  .product-list {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  /* Tabela se transforma em block nativo em telas muito pequenas */
+  .table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}

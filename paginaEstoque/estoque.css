@@ -1,0 +1,15 @@
+/* Estilo básico para o corpo */
+body {
+  background-color: #f4f4f9;
+  font-family: Arial, sans-serif;
+}
+
+header h1 {
+  color: #333;
+}
+
+/* Botão do footer */
+footer button {
+  padding: 10px 20px;
+  font-size: 16px;
+}
