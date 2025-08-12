@@ -1,6 +1,3 @@
-====================> https://jjpxt.github.io/StockMaster-v1/ <===========================
-
-
 # Stock Master
 
 **Stock Master** é um sistema de gerenciamento de estoque e controle de pedidos desenvolvido com HTML, CSS, JavaScript e Bootstrap. Este projeto inclui páginas para gestão de produtos, pedidos, relatórios e muito mais, com uma interface moderna e responsiva.
